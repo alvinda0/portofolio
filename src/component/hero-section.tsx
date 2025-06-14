@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   User,
   MapPin,
@@ -9,26 +9,22 @@ import {
   Download,
 } from 'lucide-react';
 
-// Example translation object; replace with your i18n solution or import as needed
-const t = {
-  hero: {
-    title: "Hi, I'm Alvinda Shahrul",
-    subtitle: 'Frontend Developer & UI Enthusiast',
-    description:
-      'I build modern, responsive web applications with a focus on great user experiences.',
-    location: 'Indonesia',
-    contactBtn: 'Contact Me',
-    downloadBtn: 'Download CV',
-  },
-};
+interface HeroSectionProps {
+  translations: {
+    title: string;
+    subtitle: string;
+    description: string;
+    location: string;
+    contactBtn: string;
+    downloadBtn: string;
+  };
+  isVisible: boolean;
+}
 
-export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+export default function HeroSection({
+  translations,
+  isVisible,
+}: HeroSectionProps) {
   function scrollToSection(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -55,21 +51,21 @@ export default function HeroSection() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-          {t.hero.title}
+          {translations.title}
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-4">
-          {t.hero.subtitle}
+          {translations.subtitle}
         </p>
 
         <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-          {t.hero.description}
+          {translations.description}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <div className="flex items-center gap-2 text-gray-300">
             <MapPin className="w-5 h-5 text-blue-400" />
-            <span>{t.hero.location}</span>
+            <span>{translations.location}</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <Phone className="w-5 h-5 text-blue-400" />
@@ -105,11 +101,11 @@ export default function HeroSection() {
             onClick={() => scrollToSection('contact')}
             className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
-            {t.hero.contactBtn}
+            {translations.contactBtn}
           </button>
           <button className="px-8 py-3 border border-blue-400 text-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-white transition-all duration-300 flex items-center gap-2 justify-center">
             <Download className="w-5 h-5" />
-            {t.hero.downloadBtn}
+            {translations.downloadBtn}
           </button>
         </div>
       </div>

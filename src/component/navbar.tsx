@@ -1,35 +1,38 @@
-import React, { useState } from 'react';
-import { Languages } from 'lucide-react'; // or your icon library, adjust the import path if needed
+import React from 'react';
+import { Languages } from 'lucide-react';
+import type { Locale } from '@/lib/translations';
 
-export default function Navbar() {
-  const [activeSection, setActiveSection] = useState<string>('hero');
+interface NavbarProps {
+  translations: {
+    home: string;
+    about: string;
+    experience: string;
+    skills: string;
+    contact: string;
+  };
+  activeSection: string;
+  locale: Locale;
+}
 
+export default function Navbar({
+  translations,
+  activeSection,
+  locale,
+}: NavbarProps) {
   function scrollToSection(section: string): void {
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveSection(section);
     }
   }
 
-  const [language, setLanguage] = useState<'en' | 'id'>('en');
-
-  function toggleLanguage(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void {
-    setLanguage((prev) => (prev === 'en' ? 'id' : 'en'));
+  function toggleLanguage(): void {
+    const newLocale = locale === 'en' ? 'id' : 'en';
+    // Navigate to the new locale URL
+    const currentPath = window.location.pathname;
+    const pathWithoutLocale = currentPath.replace(/^\/(en|id)/, '');
+    window.location.href = `/${newLocale}${pathWithoutLocale}`;
   }
-
-  // Assuming you have a translation object `t` that depends on `language`
-  const t = {
-    nav: {
-      home: language === 'en' ? 'Home' : 'Beranda',
-      about: language === 'en' ? 'About' : 'Tentang',
-      experience: language === 'en' ? 'Experience' : 'Pengalaman',
-      skills: language === 'en' ? 'Skills' : 'Keahlian',
-      contact: language === 'en' ? 'Contact' : 'Kontak',
-    },
-  };
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -49,7 +52,7 @@ export default function Navbar() {
                   activeSection === section ? 'text-blue-400' : 'text-gray-300'
                 }`}
               >
-                {t.nav[section === 'hero' ? 'home' : section]}
+                {translations[section === 'hero' ? 'home' : section]}
               </button>
             ))}
           </div>
@@ -59,9 +62,7 @@ export default function Navbar() {
             className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
           >
             <Languages className="w-4 h-4" />
-            <span className="text-sm font-medium">
-              {language.toUpperCase()}
-            </span>
+            <span className="text-sm font-medium">{locale.toUpperCase()}</span>
           </button>
         </div>
       </div>
