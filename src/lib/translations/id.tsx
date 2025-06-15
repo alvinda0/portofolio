@@ -26,6 +26,52 @@ export const id = {
       satisfaction: 'Kepuasan Klien',
     },
   },
+  projects: {
+    title: 'Proyek Saya',
+    projects: [
+      {
+        title: 'Aplikasi Sibayar',
+        description:
+          'Aplikasi mobile untuk pembayaran digital dengan integrasi QRIS dan payment gateway. Dikembangkan menggunakan Flutter dengan fitur-fitur modern dan UI yang responsif.',
+        technologies: ['Flutter', 'QRIS', 'Payment Gateway', 'REST API'],
+        image:
+          'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Sibayar+App',
+        link: 'https://play.google.com/store/apps/details?id=com.sibayar.app',
+      },
+      {
+        title: 'Aplikasi Sikasir',
+        description:
+          'Sistem kasir digital dengan kemampuan real-time tracking dan manajemen inventori. Terintegrasi dengan berbagai metode pembayaran untuk kemudahan transaksi.',
+        technologies: [
+          'Flutter',
+          'Firebase',
+          'Payment Gateway',
+          'Real-time DB',
+        ],
+        image:
+          'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Sikasir+App',
+        link: 'https://play.google.com/store/apps/details?id=com.sikasir.app',
+      },
+      {
+        title: 'Dashboard KPK',
+        description:
+          'Sistem dashboard interaktif untuk Komisi Pemberantasan Korupsi dengan fitur login aman dan visualisasi data. Fokus pada keamanan dan efisiensi workflow.',
+        technologies: ['React.js', 'Chart.js', 'Security', 'Dashboard'],
+        image:
+          'https://via.placeholder.com/400x300/10B981/FFFFFF?text=KPK+Dashboard',
+        link: 'https://dashboard.kpk.go.id',
+      },
+      {
+        title: 'E-Commerce Platform',
+        description:
+          'Platform e-commerce lengkap dengan sistem manajemen produk, keranjang belanja, dan checkout. Dikembangkan dengan teknologi modern untuk performa optimal.',
+        technologies: ['React.js', 'Node.js', 'MongoDB', 'Stripe'],
+        image:
+          'https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=E-Commerce',
+        link: 'https://ecommerce-demo.com',
+      },
+    ],
+  },
   experience: {
     title: 'Pengalaman Kerja',
     jobs: [

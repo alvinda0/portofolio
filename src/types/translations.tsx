@@ -24,6 +24,16 @@ export interface Translation {
       satisfaction: string;
     };
   };
+  projects: {
+    title: string;
+    projects: Array<{
+      title: string;
+      description: string;
+      technologies: string[];
+      image: string;
+      link?: string;
+    }>;
+  };
   experience: {
     title: string;
     jobs: Array<{

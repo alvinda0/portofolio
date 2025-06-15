@@ -11,6 +11,7 @@ import ExperienceSection from '@/component/experience-section';
 import SkillsSection from '@/component/skills-section';
 import ContactSection from '@/component/contact-section';
 import Footer from '@/component/footer';
+import ProjectSection from '@/component/project-section';
 
 export default function Portfolio() {
   const params = useParams();
@@ -61,6 +62,8 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <HeroSection translations={t.hero} isVisible={isVisible} />
+
+      <ProjectSection translations={t.projects} isVisible={isVisible} />
 
       {/* About Section */}
       <AboutSection translations={t.about} isVisible={isVisible} />

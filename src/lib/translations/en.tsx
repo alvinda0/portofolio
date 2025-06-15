@@ -26,6 +26,52 @@ export const en = {
       satisfaction: 'Client Satisfaction',
     },
   },
+  projects: {
+    title: 'My Projects',
+    projects: [
+      {
+        title: 'Sibayar Application',
+        description:
+          'Mobile application for digital payments with QRIS integration and payment gateway. Developed using Flutter with modern features and responsive UI.',
+        technologies: ['Flutter', 'QRIS', 'Payment Gateway', 'REST API'],
+        image:
+          'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Sibayar+App',
+        link: 'https://play.google.com/store/apps/details?id=com.sibayar.app',
+      },
+      {
+        title: 'Sikasir Application',
+        description:
+          'Digital cashier system with real-time tracking capabilities and inventory management. Integrated with various payment methods for transaction convenience.',
+        technologies: [
+          'Flutter',
+          'Firebase',
+          'Payment Gateway',
+          'Real-time DB',
+        ],
+        image:
+          'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Sikasir+App',
+        link: 'https://play.google.com/store/apps/details?id=com.sikasir.app',
+      },
+      {
+        title: 'KPK Dashboard',
+        description:
+          'Interactive dashboard system for the Corruption Eradication Commission with secure login features and data visualization. Focused on security and workflow efficiency.',
+        technologies: ['React.js', 'Chart.js', 'Security', 'Dashboard'],
+        image:
+          'https://via.placeholder.com/400x300/10B981/FFFFFF?text=KPK+Dashboard',
+        link: 'https://dashboard.kpk.go.id',
+      },
+      {
+        title: 'E-Commerce Platform',
+        description:
+          'Complete e-commerce platform with product management system, shopping cart, and checkout. Developed with modern technology for optimal performance.',
+        technologies: ['React.js', 'Node.js', 'MongoDB', 'Stripe'],
+        image:
+          'https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=E-Commerce',
+        link: 'https://ecommerce-demo.com',
+      },
+    ],
+  },
   experience: {
     title: 'Work Experience',
     jobs: [
