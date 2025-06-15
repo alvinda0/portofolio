@@ -35,7 +35,7 @@ export const en = {
           'Mobile application for digital payments with QRIS integration and payment gateway. Developed using Flutter with modern features and responsive UI.',
         technologies: ['Flutter', 'QRIS', 'Payment Gateway', 'REST API'],
         image:
-          'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Sibayar+App',
+          'https://play-lh.googleusercontent.com/gd_V9O5PgRrSdKWTZKSnU_yvMa4LN0m62k4WWT68V6xTgmdXkasupvScHwV1AsCdLqA=w526-h296-rw',
         link: 'https://play.google.com/store/apps/details?id=com.sibayar.app',
       },
       {
@@ -49,7 +49,7 @@ export const en = {
           'Real-time DB',
         ],
         image:
-          'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Sikasir+App',
+          'https://static.promediateknologi.id/crop/0x0:0x0/750x0/webp/photo/p1/04/2024/12/21/Fitur-sibayar-1251232553.jpg',
         link: 'https://play.google.com/store/apps/details?id=com.sikasir.app',
       },
       {
